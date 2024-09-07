@@ -1,0 +1,42 @@
+
+    .card-monitor {
+        border-radius: 10px;
+        min-width: 500px;
+        //min-height: 300px;
+    }
+
+    .card-monitor-header{
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        min-height: 50px;
+        .el-text{
+            color:#fff;
+        }
+    }
+
+    .card-monitor-header.online{
+        background-color: #008000;
+    }
+
+    .card-monitor-header.offline
+    {
+        background-color: #909399;
+        
+    }
+    
+    .card-monitor-header.alarm
+    {
+        background-color: #F56C6C;
+    }
+
+    .card-monitor-body
+    {
+        margin: 20px;
+    }
+
+    .descriptions-monitor .el-descriptions__label {
+        width: 120px; 
+    }

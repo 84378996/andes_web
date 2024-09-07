@@ -1,0 +1,55 @@
+.uploader-example {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+
+     .uploader-btn {
+        padding: 9px 19px; 
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        background-color: #ECF5FF;
+        border: 1px solid #A0CFFF;
+        color: #409EFF;
+        font-size: 14px;
+          &:hover {
+            background-color: #409EFF; /* Change the background color on hover */ 
+            color: #FFFFFF;  
+        } 
+    }
+      
+    .uploader-list {
+        max-height: 400px;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    // .uploader-file-name {
+    //     width: 45%;
+    //     overflow: hidden;
+    //     white-space: nowrap;
+    //     text-overflow: ellipsis;
+    //     //首行文本缩进
+    //     text-indent: 14px;
+    // }
+    
+    // .uploader-file-size {
+    //     width: 13%;
+    //     text-indent: 10px;
+    // }
+    
+    // .uploader-file-meta {
+    //     width: 8%;
+    // }
+    
+    // .uploader-file-status {
+    //     width: 24%;
+    //     text-indent: 20px;
+    // }
+    
+    // .uploader-file-actions {
+    //     width: 10%;
+    // }
+  }
+
+

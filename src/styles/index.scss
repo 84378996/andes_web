@@ -1,0 +1,44 @@
+@import './login.scss';
+@import './sidebar.scss';
+@import './tagview.scss';
+@import './navbar.scss';
+@import './appcontainer.scss';
+@import './dialog.scss';
+@import './monitorcontainer.scss';
+@import './taskcontainer.scss';
+@import './button.scss';
+@import './table.scss';
+@import './space.scss';
+@import './descriptions.scss';
+@import './tree.scss';
+@import './dropdown.scss';
+@import './divider.scss';
+@import './card.scss';
+@import './messagebox.scss';
+@import './uploader.scss';
+@import './form.scss';
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+  
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

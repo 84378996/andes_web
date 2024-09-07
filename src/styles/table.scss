@@ -1,0 +1,56 @@
+.el-table
+{ 
+  width:100%;
+
+  //扩大选择范围
+  .el-checkbox__input{
+    padding: 5px 5px;
+  }
+}
+
+
+// .el-table th {
+//   padding: 10px 2px;
+// }
+.el-table-with-tool td.el-table__cell{
+  padding: 5px 0px;
+}
+.el-table-with-tool .cell
+{
+  padding: 0px 5px;
+}
+
+// .el-table-tool-item{
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+ .el-table-button{
+  padding-left: 8px;
+  padding-right: 8px;
+  border: none; 
+  background-color: transparent;
+ }
+
+
+.el-table .warning-background {
+  --el-table-tr-bg-color: #E6A23C; 
+}
+
+.el-table .success-background {
+  --el-table-tr-bg-color: #67C23A; 
+}
+
+.el-table .warning-text {
+  color: #E6A23C;
+}
+.el-table .success-text {
+  color: #67C23A;
+}
+.el-table .brand-text {
+  color: #409EFF;
+}
+
+
+

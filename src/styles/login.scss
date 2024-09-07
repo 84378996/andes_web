@@ -1,0 +1,79 @@
+.login-container
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .el-card {
+        border-radius: 5px;
+    }
+    .el-card .el-card__header {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: bold;
+        border: 0;
+    }
+
+    .el-card .el-card__body {
+        padding: 5px 20px 10px 20px;
+    }
+
+    .el-form {
+          width: 400px;
+    }
+    .el-button {
+        width: 100%;
+    }
+
+    .el-form-item {
+        margin-bottom: 20px;
+    }
+
+    .el-input-group__append
+    {
+        padding: 0;
+        height: 40px;
+    }
+    .divimage{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: content-box;
+        width: 90px;
+        height: 38px;
+        cursor: pointer;
+        background-repeat:no-repeat;
+         background-size:100% 100%;
+         -moz-background-size:100% 100%;
+         border-radius: 0 10px;
+    }
+    .divcopyright{
+        width: 100%;
+        color: gray;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+    }
+    .codeimage{
+        width: 90px;
+        height: 38px; 
+        margin-right: 2px;
+        cursor: pointer;
+    }
+    .image-slot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        //background: var(--el-fill-color-light);
+        //color: var(--el-text-color-secondary);
+        //font-size: 30px;
+      }
+}
+

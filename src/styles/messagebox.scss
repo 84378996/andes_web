@@ -1,0 +1,29 @@
+ .el-message-box
+{
+    padding-left: 20px;
+    padding-right: 10px;
+    
+}
+
+.el-message-box__title
+{
+    font-size: 25px;
+}
+
+.el-message-box__headerbtn
+{
+    font-size: 25px;
+}
+
+.el-message-box__content 
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.el-message-box__btns .el-button
+{
+    font-size: 16px;
+    min-width: 100px;
+}

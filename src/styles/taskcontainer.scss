@@ -1,0 +1,229 @@
+.taskcurrent-container{
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding:10px;
+
+
+    .divworktable{
+        padding:10px;
+    }
+
+
+    .worktable{
+        width: 50px;
+        height: 100px;
+        background-color:#a8abb2;
+        box-shadow: var(--el-box-shadow-light);
+    }
+
+    .worktable_idle{
+        background-color:#a8abb2;
+    }
+
+    .worktable_undone{
+        background-color: #E6A23C;
+    }
+
+    .worktable_done{
+        background-color: #67C23A;
+    }
+
+
+}
+
+
+
+
+
+
+.taskbutton{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    //height: 100%;
+}
+
+.tasklist{
+    height: 100%;
+    max-width: 700px;
+    margin-right: 10px;
+    //background-color: #409EFF;
+    box-shadow: var(--el-box-shadow-light);
+ 
+
+    .el-space{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right:10px;
+    }
+
+    .el-space .el-button{
+        min-width: 100px;
+    }
+
+}
+
+.descriptions-task .el-descriptions__label {
+    width: 100px; 
+}
+
+.taskresultdiv{
+    height: 100%;
+    width: 100%;
+    padding:10px;
+    box-shadow: var(--el-box-shadow-light);
+}
+
+.taskresult{
+    padding:10px;
+    
+    .el-result__title{
+        margin-top: 10px;
+        
+        .el-text{
+            font-size: 18px;
+        }
+        .el-button{
+            font-size: 18px;
+        }
+    }
+    .el-result__icon{
+        .loading{
+            font-size: 40px;    
+            background-color: transparent;
+            border: none;
+            color: #E6A23C;
+        }
+    }
+    .el-result__subtitle{
+        .el-text{
+            color: #a8abb2;
+        }   
+    }    
+}
+
+.taskresult-disable{
+    .el-result__icon{
+        color:  var(--el-color-info);
+    }
+    .el-result__title .el-text{
+        color:  var(--el-color-info);
+    }
+    .el-result__subtitle .el-text{
+        color: var(--el-color-info);
+    }
+    .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+.taskresult-idle{
+    .el-result__icon{
+        //color: #303133;
+        color: var(--el-text-color);
+    }
+
+    .el-result__title .el-text{
+        color: var(--el-text-color);
+    }
+
+    .el-result__subtitle .el-text{
+         color: var(--el-text-color);
+     }
+     .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+.taskresult-success{
+    .el-result__icon{
+        //color: #67C23A;
+        color: var(--el-color-success)
+    }
+    .el-result__title .el-text{
+        color: var(--el-color-success)
+    }
+    .el-result__subtitle .el-text{
+         color: var(--el-color-success)
+     }
+     .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+.taskresult-running{
+
+    .el-result__icon{
+        //color: #409EFF;
+        color: var(--el-color-primary);
+    }
+
+    .el-result__title .el-text{
+        color: var(--el-color-primary);
+        font-weight: 700;
+    }
+    .el-result__subtitle .el-text{
+         color: var(--el-color-primary);
+     }
+     .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+.taskresult-preprocress{
+
+    .el-result__icon{
+        color: #303133;
+    }
+
+    .el-result__title .el-text{
+        color: #303133;
+    }
+    .el-result__subtitle .el-text{
+         color: #303133;
+     }
+     .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+
+}
+
+.taskresult-warning{
+    .el-result__icon{
+        //color: #E6A23C;
+        color: var(--el-color-warning);
+    }
+    .el-result__title .el-text{
+        color: var(--el-color-warning);
+    }
+    .el-result__subtitle .el-text{
+         color: var(--el-color-warning);
+    }
+    .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+.taskresult-danger{
+    .el-result__icon{
+        //color: #F56C6C;
+        color: var(--el-color-danger);
+    }
+    .el-result__title .el-text{
+        color: var(--el-color-danger);
+    }
+    .el-result__subtitle .el-text{
+        color: var(--el-color-danger);
+    }
+    .el-result__subtitle .el-text.el-text--info {
+        color: var(--el-color-info);
+    }
+}
+
+

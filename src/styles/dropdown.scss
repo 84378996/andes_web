@@ -1,0 +1,32 @@
+.el-dropdown{
+    .el-dropdown-menu__item.orange i {
+      color: #F09D1B;
+    }
+    .el-dropdown-menu__item.green i {
+      color: #36b100;
+    }
+    .el-dropdown-menu__item.blue i {
+      color: #0098ae;
+    }
+    .el-dropdown-menu__item.red i {
+      color: #E83434;
+    }
+    .el-dropdown-menu__item:not(.is-disabled):hover{
+      background-color: #ECF5FF;
+    }
+  }
+  
+  .el-dropdown:focus{
+    outline: 0;
+}
+
+  
+  .nav-dropdown-menu {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .el-dropdown-menu__item{
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+}

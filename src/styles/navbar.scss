@@ -1,0 +1,36 @@
+@import "./variables.scss";
+.navbardiv {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  
+  .breadcrumb {
+    //font-size: 14px;
+    //margin-left: 10px;
+    /* bread  crumb transition */
+    .breadcrumbtransition-enter-active,
+    .breadcrumbtransition-leave-active {
+      transition: all 0.5s;
+    }
+  
+    .breadcrumbtransition-enter,
+    .breadcrumbtransition-leave-active {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  
+    .breadcrumbtransition-move {
+      transition: all 0.5s;
+    }
+  
+    .breadcrumbtransition-leave-active {
+      position: absolute;
+    }
+  }
+
+}
