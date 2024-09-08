@@ -107,6 +107,18 @@ const routes: Array<RouteRecordRaw> = [
           purview: { show: true, key: "Monitor_All" },
         },
       },
+      {
+        path: "devicehlist",
+        component: () => import("@/views/monitor/devicelist.vue"),
+        name: "DeviceHList",
+        meta: {
+          title: "历史浓度",
+          icon: "View",
+          visible: true,
+          cache: false,
+          purview: { show: true, key: "Device_All" },
+        },
+      },
     ],
   },
 

@@ -24,19 +24,15 @@
         </el-col>
         <el-col :span="12">
           <el-form-item label="用户姓名" prop="UserName">
-            <el-input v-model="ruleForm.UserName"></el-input>
+            <el-input v-model="ruleForm.Name"></el-input>
           </el-form-item> </el-col
       ></el-row>
       <el-row
-        ><el-col :span="12">
-          <el-form-item label="设备登录名" prop="DevUser">
-            <el-input v-model="ruleForm.DevUser"></el-input>
-          </el-form-item>
-        </el-col>
+        ><el-col :span="12"> </el-col>
         <el-col :span="12">
           <el-form-item label="密码" prop="Pwd">
             <el-input
-              v-model="ruleForm.Pwd"
+              v-model="ruleForm.Password"
               :disabled="isAdd === false"
               type="password"
               show-password
@@ -44,28 +40,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-      <el-row
-        ><el-col :span="12">
-          <el-form-item label="电话" prop="Phone">
-            <el-input v-model="ruleForm.Phone"></el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="邮箱" prop="Email">
-            <el-input v-model="ruleForm.Email"></el-input>
-          </el-form-item> </el-col
-      ></el-row>
-      <el-row
-        ><el-col :span="12">
-          <el-form-item label="部门" prop="Department">
-            <el-input v-model="ruleForm.Department"></el-input>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="工号" prop="JobNumber">
-            <el-input v-model="ruleForm.JobNumber"></el-input>
-          </el-form-item> </el-col
-      ></el-row>
       <el-row
         ><el-col :span="12">
           <el-form-item label="状态">
@@ -175,7 +149,7 @@ export default defineComponent({
           trigger: "blur",
         },
       ],
-      UserName: [
+      Name: [
         {
           type: "string",
           required: true,
@@ -183,7 +157,7 @@ export default defineComponent({
           trigger: "blur",
         },
       ],
-      Pwd: [
+      Password: [
         {
           type: "string",
           required: true,
@@ -247,7 +221,7 @@ export default defineComponent({
       ruleForm.Enabled = 1;
       isAdd.value = true;
 
-      rules.Pwd = [
+      rules.Password = [
         {
           type: "string",
           required: true,
@@ -271,7 +245,7 @@ export default defineComponent({
       ruleForm.ID = props.param.ID;
       isAdd.value = false;
       loading.value = true;
-      rules.Pwd = [];
+      rules.Password = [];
       apiGetUser({
         Data: { ID: ruleForm.ID },
         OperID: store.getters.user.ID,

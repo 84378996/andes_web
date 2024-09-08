@@ -5,7 +5,7 @@ import { PaginationBase } from "./interface";
 export interface UserCondition extends PaginationBase {
   ID?: number | null;
   LoginName?: string | null;
-  UserName?: string | null;
+  Name?: string | null;
   Enabled?: number | null;
 }
 
@@ -14,46 +14,31 @@ export interface UserInfo {
   // 登录名
   LoginName?: string | null;
   // 用户名
-  UserName?: string | null;
+  Name?: string | null;
   // 用户密码
-  Pwd?: string | null;
-  // 电话
-  Phone?: string | null;
-  // 邮箱
-  Email?: string | null;
+  Password?: string | null;
   // 角色
   RoleID?: number | null;
   // 创建时间
-  AddTime?: string | null;
+  CreateTime?: string | null;
   // 备注
   Remark?: string | null;
   // 启用/禁用
   Enabled?: number | null;
-  // 部门
-  Department?: string | null;
   // 头像文件名
   AvatarName?: string | null;
-  //设备上对应的用户名
-  DevUser?: string | null;
-  // 工号
-  JobNumber?: string | null;
-
   RoleName?: string | null;
+  AvatarHttp?: string | null;
 }
 
 export function resetUserInfo(data: UserInfo) {
   data.ID = null;
   data.LoginName = null;
-  data.UserName = null;
-  data.Pwd = null;
-  data.Phone = null;
-  data.Email = null;
-  data.Department = null;
-  data.JobNumber = null;
+  data.Name = null;
+  data.Password = null;
   data.Remark = null;
   data.Enabled = null;
-  data.DevUser = null;
-  data.AddTime = null;
+  data.CreateTime = null;
   data.RoleID = null;
   data.RoleName = null;
 }

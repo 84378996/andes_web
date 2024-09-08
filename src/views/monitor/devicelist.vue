@@ -3,9 +3,6 @@
     <el-header class="header-container">
       <div class="header-container-condition">
         <el-form :inline="true">
-          <el-form-item label="设备号" prop="DeviceNo">
-            <el-input v-model="ruleForm.DeviceNo"></el-input>
-          </el-form-item>
           <el-form-item label="时间">
             <el-date-picker
               v-model="ruleForm.StartTime"
@@ -39,13 +36,13 @@
       <div class="header-container-tool">
         <el-space wrap>
           <!-- <el-button
-                 
-                  class="blue"
-                  icon="Download"
-                  @click="handleExport"
-                  :loading="loading"
-                  >导出</el-button
-                >-->
+                   
+                    class="blue"
+                    icon="Download"
+                    @click="handleExport"
+                    :loading="loading"
+                    >导出</el-button
+                  >-->
         </el-space>
 
         <el-button
@@ -79,7 +76,7 @@
           </template>
         </el-table-column>
 
-        <el-table-column label="操作" :width="columnOperateWidth">
+        <!-- <el-table-column label="操作" :width="columnOperateWidth">
           <template v-slot="scope">
             <el-button
               class="el-table-button"
@@ -90,38 +87,38 @@
               详细
             </el-button>
           </template>
-        </el-table-column>
-        <el-table-column label="设备号" width="180px" show-overflow-tooltip>
+        </el-table-column> -->
+        <el-table-column label="设备名称" width="180px" show-overflow-tooltip>
           <template v-slot="scope">
-            <el-text>{{ scope.row.DeviceNo }}</el-text>
+            <el-text>{{ scope.row.DeviceName }}</el-text>
           </template>
         </el-table-column>
-        <el-table-column label="IMEI" show-overflow-tooltip>
+        <!-- <el-table-column label="IMEI" show-overflow-tooltip>
           <template v-slot="scope">
             <el-text>{{ scope.row.IMEI }}</el-text>
           </template>
-        </el-table-column>
-        <el-table-column label="实时浓度" show-overflow-tooltip>
+        </el-table-column> -->
+        <el-table-column label="浓度" show-overflow-tooltip>
           <template v-slot="scope">
             <el-text>{{ scope.row.CurrentValue }}</el-text>
           </template>
         </el-table-column>
-        <el-table-column label="最后更新时间" show-overflow-tooltip>
+        <el-table-column label="上报时间" show-overflow-tooltip>
           <template v-slot="scope">
-            <el-text> {{ dateTimeFormat(scope.row.LastRecordTime) }}</el-text>
+            <el-text> {{ dateTimeFormat(scope.row.RecordTime) }}</el-text>
           </template>
         </el-table-column>
-        <el-table-column label="在线状态" show-overflow-tooltip>
+        <!-- <el-table-column label="在线状态" show-overflow-tooltip>
           <template v-slot="scope">
             <el-text> {{ scope.row.OnlineStatus }}</el-text>
           </template>
-        </el-table-column>
+        </el-table-column> -->
       </el-table>
       <!-- <DeviceDetailDlg
-        :visible="isDetailDlgVisible"
-        :param="dlgParam"
-        @dialogCallback="detailDialogCallback"
-      /> -->
+          :visible="isDetailDlgVisible"
+          :param="dlgParam"
+          @dialogCallback="detailDialogCallback"
+        /> -->
     </el-main>
     <el-footer class="footer-container">
       <el-scrollbar>
@@ -153,12 +150,11 @@ import {
   columnSelectionWidth,
   columnOperateWidth,
 } from "@/api/common";
-import { GasDevice, apiGetDevices, DeviceCondition } from "@/api/gas";
+import { DeviceRecord, apiGetDeviceRecords, DeviceCondition } from "@/api/gas";
 import { dateTimeFormat } from "@/api/format";
 import { DialogResult } from "@/api/interface";
-import { useRouter } from "vue-router";
 export default defineComponent({
-  name: "GasMonitor",
+  name: "DeviceHList",
   components: {},
   props: {
     msg: String,
@@ -170,14 +166,14 @@ export default defineComponent({
   },
   setup(props) {
     const store = useStore();
-    const router = useRouter();
+
     const isDetailDlgVisible = ref(false);
     const isEditDlgVisible = ref(false);
     const isModifyTaskCutsDlgVisible = ref(false);
 
     const columnIndexWidth = ref(50);
 
-    const dlgParam = ref<GasDevice>({
+    const dlgParam = ref<DeviceRecord>({
       ID: 0,
     });
     const loading = ref(false);
@@ -192,8 +188,8 @@ export default defineComponent({
     });
     const query = ref<DeviceCondition>({});
 
-    const devicelist = ref<GasDevice[]>([]);
-    const multipleSelection = ref<GasDevice[]>([]);
+    const devicelist = ref<DeviceRecord[]>([]);
+    const multipleSelection = ref<DeviceRecord[]>([]);
     const taskLineOptions = ref<KeyValuePair[]>([]);
     onMounted(() => {
       ruleForm.PageIndex = 1;
@@ -226,7 +222,7 @@ export default defineComponent({
     const refreshList = () => {
       loading.value = true;
       devicelist.value = [];
-      apiGetDevices({
+      apiGetDeviceRecords({
         Data: query.value,
         OperID: store.getters.user.ID,
       })
@@ -246,7 +242,7 @@ export default defineComponent({
       row,
       index,
     }: {
-      row: GasDevice;
+      row: DeviceRecord;
       index: number;
     }) => {
       //注意  不要与stripe 斑马纹混合使用，否则无效
@@ -275,13 +271,8 @@ export default defineComponent({
     };
 
     const menuDetail = (row: any) => {
-      router.push({
-        name: "TaskCurrent",
-        params: {
-          //value: task.TaskLine,
-          //label: task.TaskLineName,
-        },
-      });
+      dlgParam.value = { ID: row.ID };
+      isDetailDlgVisible.value = true;
     };
     const handleAdd = () => {
       dlgParam.value = { ID: 0 };

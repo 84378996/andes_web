@@ -7,7 +7,7 @@
             <el-input v-model="ruleForm.LoginName" />
           </el-form-item>
           <el-form-item label="用户名">
-            <el-input v-model="ruleForm.UserName" />
+            <el-input v-model="ruleForm.Name" />
           </el-form-item>
           <el-form-item>
             <el-button
@@ -215,7 +215,7 @@ export default defineComponent({
 
     const dlgParam = ref({});
     const ruleForm = reactive<UserCondition>({
-      UserName: "",
+      Name: "",
       PageIndex: 1,
       PageSize: 15,
       Enabled: null,
@@ -255,7 +255,7 @@ export default defineComponent({
     };
 
     const handleQueryClear = () => {
-      ruleForm.UserName = "";
+      ruleForm.Name = "";
       ruleForm.Enabled = null;
     };
 
@@ -293,7 +293,7 @@ export default defineComponent({
       for (var i = 0; i < multipleSelection.value.length; i++) {
         var row = multipleSelection.value[i];
 
-        str = str + "【" + row.UserName + "】";
+        str = str + "【" + row.Name + "】";
       }
 
       ElMessageBox.confirm("即将删除 " + str + " ,是否继续?", "提示", {
